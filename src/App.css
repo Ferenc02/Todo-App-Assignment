@@ -1,0 +1,216 @@
+/* Own styling */
+/* Top part of the todo list */
+.todo-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 1rem;
+}
+.sort-todo {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+/* Todo form */
+.todo-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  font-size: medium;
+}
+
+.todo-form input {
+  flex: 1 0 75%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--button-background);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  color: var(--text);
+  background-color: var(--button-background);
+  transition: border-color 0.25s;
+  box-shadow: 0 0 2px var(--shadow);
+  outline: none;
+  font-size: medium;
+}
+.todo-form input:hover {
+  border-color: var(--primary);
+}
+.todo-form input:focus {
+  border-color: var(--primary);
+}
+.todo-form button {
+  flex: 1 1 0%;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  color: var(--text);
+  background-color: var(--button-background);
+  cursor: pointer;
+  transition: border 0.25s;
+  box-shadow: 0 0 2px var(--shadow);
+  outline: none;
+  white-space: nowrap;
+}
+
+/* Todo item */
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.todo {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  color: var(--text);
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+}
+
+.todo-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.5rem;
+  background-color: var(--button-background);
+  border: 1px solid var(--button-background);
+  box-shadow: 0 0 2px var(--shadow);
+  padding: 0.75rem 1rem;
+  font-size: medium;
+  transition: border 0.25s ease;
+}
+.todo-item input[type="checkbox"] {
+  background-color: var(--button-background) !important;
+}
+.todo-item:hover {
+  border: 1px solid var(--primary);
+}
+.todo-item:has(input:checked) {
+  text-decoration: line-through;
+}
+
+.todo-delete {
+  border-radius: 0.5rem;
+  font-weight: 500;
+  color: var(--text);
+  background-color: var(--button-background);
+  cursor: pointer;
+  box-shadow: 0 0 2px var(--shadow);
+  outline: none;
+  align-self: stretch;
+  text-decoration: none !important;
+}
+.todo-delete:hover {
+  color: var(--primary);
+}
+
+/* Footer stuff */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--button-background);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
+}
+.theme-switcher {
+  position: absolute;
+  right: 0;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.theme-switcher * {
+  cursor: pointer;
+}
+.theme-switcher input {
+  display: none;
+}
+.theme-switcher label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+
+  background-color: var(--button-background);
+
+  transition: background-color 0.25s;
+  user-select: none;
+}
+.theme-switcher .light-mode {
+  display: none;
+}
+
+.theme-switcher .dark-mode {
+  display: flex;
+}
+
+.theme-switcher input:checked ~ .light-mode {
+  display: flex;
+}
+
+.theme-switcher input:checked ~ .dark-mode {
+  display: none;
+}
+
+#root {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
